@@ -35,8 +35,9 @@ Write a function called sortNames that takes an array of names and sorts them al
 For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
-const sortNames = (arr) => { arr.sort();
+const sortNames = (arr) => { 
   // Solution code here...
+  return arr.sort((a, b) => a < b ? -1 : 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,7 +50,7 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
-  arr.sort((a,b)=>a-b );
+  return arr.sort((a, b) => a < b ? -1 : 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,13 +63,12 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
-  arr.sort((a,b)=>{
-    if(a<b){
-      return 1;
-    }else if(a>b){
+  return arr.sort((a,b)=>{
+    if(a>b){
       return -1;
+    }else{
+      return 1;
     }
-    return 0;
   });
 };
 
@@ -84,7 +84,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
-  arr.sort((a,b)=>{b-a;});
+  return arr.sort((a, b) => a < b ? -1 : 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,9 +102,7 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
-  arr.sort((a,b)=>{
-    a.price-b.price;
-  });
+  return arr.sort((a, b) => a.price < b.price ? -1 : 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
